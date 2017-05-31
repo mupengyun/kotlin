@@ -590,8 +590,8 @@ class DoubleColonExpressionResolver(
 
     private fun bindPropertyReference(expression: KtCallableReferenceExpression, referenceType: KotlinType, context: ResolutionContext<*>) {
         val localVariable = LocalVariableDescriptor(
-                context.scope.ownerDescriptor, Annotations.EMPTY, Name.special("<anonymous>"), referenceType, /* mutable = */ false,
-                /* isDelegated = */ false, expression.toSourceElement()
+                context.scope.ownerDescriptor, Annotations.EMPTY, Name.special("<anonymous>"), referenceType,
+                expression.toSourceElement()
         )
 
         context.trace.record(BindingContext.VARIABLE, expression, localVariable)

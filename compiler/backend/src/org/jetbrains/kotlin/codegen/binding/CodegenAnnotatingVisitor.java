@@ -384,8 +384,6 @@ class CodegenAnnotatingVisitor extends KtVisitorVoid {
                 Annotations.Companion.getEMPTY(),
                 variableDescriptor.getName(),
                 delegateType,
-                false,
-                false,
                 SourceElement.NO_SOURCE
         );
         bindingTrace.record(LOCAL_VARIABLE_DELEGATE, variableDescriptor, delegateVariableDescriptor);
@@ -395,8 +393,6 @@ class CodegenAnnotatingVisitor extends KtVisitorVoid {
                 Annotations.Companion.getEMPTY(),
                 Name.identifier(variableDescriptor.getName().asString() + "$metadata"),
                 ReflectionTypes.Companion.createKPropertyStarType(DescriptorUtilsKt.getModule(variableDescriptor)),
-                false,
-                false,
                 SourceElement.NO_SOURCE
         );
         bindingTrace.record(LOCAL_VARIABLE_PROPERTY_METADATA, variableDescriptor, metadataVariableDescriptor);

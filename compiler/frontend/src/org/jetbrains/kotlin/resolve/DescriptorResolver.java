@@ -682,8 +682,6 @@ public class DescriptorResolver {
                 annotationResolver.resolveAnnotationsWithArguments(scope, parameter.getModifierList(), trace),
                 KtPsiUtil.safeName(parameter.getName()),
                 type,
-                false,
-                false,
                 KotlinSourceElementKt.toSourceElement(parameter)
         );
         trace.record(BindingContext.VALUE_PARAMETER, parameter, variableDescriptor);

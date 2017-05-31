@@ -355,7 +355,9 @@ class ControlFlowInformationProvider private constructor(
                     }
                 }
                 is VariableDescriptor ->
-                    report(Errors.UNINITIALIZED_VARIABLE.on(element, variableDescriptor), ctxt)
+                    if (!variableDescriptor.isLateInit) {
+                        report(Errors.UNINITIALIZED_VARIABLE.on(element, variableDescriptor), ctxt)
+                    }
             }
         }
     }
