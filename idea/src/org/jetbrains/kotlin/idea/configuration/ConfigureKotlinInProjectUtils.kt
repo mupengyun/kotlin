@@ -58,7 +58,9 @@ val EAP_11_REPOSITORY = RepositoryDescription(
         "https://bintray.com/kotlin/kotlin-eap-1.1/kotlin/",
         isSnapshot = false)
 
-fun RepositoryDescription.toRepositorySnippet() = "maven {\nurl '$url'\n}"
+fun RepositoryDescription.toGroovyRepositorySnippet() = "maven {\nurl '$url'\n}"
+
+fun RepositoryDescription.toKotlinRepositorySnippet() = "maven {\nsetUrl(\"$url\")\n}"
 
 fun getRepositoryForVersion(version: String): RepositoryDescription? = when {
     isSnapshot(version) -> SNAPSHOT_REPOSITORY
